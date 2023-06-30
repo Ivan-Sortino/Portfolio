@@ -8,7 +8,6 @@ a{
     text-decoration: none; 
     color: black;
 }
-
 :root{
     background-color: #EFEFFB;
     font-family: 'Poppins', sans-serif;
@@ -54,14 +53,33 @@ nav a{
     width: 500px;
     display: block;
 }
+.flech{ /*IMG DE LA FLECHA*/
+    position: absolute;
+    top: 88%;
+    width: 7rem;
+    animation: flechita 1.5s ;
+    animation-iteration-count: infinite;
+}
 
-/*IMG DE LA FLECHA*/
-.hero{ 
-    background-image: url(./img/Flechas.svg );
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 7rem;
-} 
+ @keyframes flechita {  /* ANIMACION DE LA FLECHA */
+    0%{
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+    25%{
+        opacity: 0.7;
+    }
+    35%{
+        opacity: 0.5;
+    }
+    65%{
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
 
 /* STACK DE HABILIDADES*/
 .stack{
@@ -87,17 +105,28 @@ nav a{
     padding: 10px;
     
 }
+
 /* EMPIZO CON EL ABOUT ME */
-.about h2{
+
+.about h2{  /* ACOMODAMOS EL TITULO */
     font-size: 3rem;
-    margin-left: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px 60px 0px; 
+}
+.about{
+    margin-bottom: 5rem;
+    background-color: white;
+    padding: 10px 0px 70px 0px;
 }
 .contenedor{
     display: flex;
     justify-content: space-evenly;
 
 }
-.cuadrado-Padre{
+/* EMPIEZA LA CREACION DE LA TARJETA */
+.cuadrado-Padre{ 
     -webkit-box-shadow: 8px 0px 19px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 8px 0px 19px 0px rgba(0,0,0,0.75);
     box-shadow: 8px 0px 19px 0px rgba(0,0,0,0.75);
@@ -131,13 +160,14 @@ nav a{
 .descripcion{
     padding: 3px 20px;
 }
+/* TERMINA LA CREACION DE LA TARJETA */
 
+/* EMPIEZO CON LOS PROYECTOS */
 
-
-
-
-
-
-.proyects img{
-    width: 50px;
+ .proyects h2{ /* ACOMODAMOS EL H2 */
+    font-size: 3rem;
+    margin: 70px 0px 60px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
