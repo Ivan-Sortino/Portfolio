@@ -113,11 +113,12 @@ nav a{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0px 60px 0px; 
+    margin: 20px 0px 100px 0px; 
 }
 .about{
-    margin-bottom: 5rem;
-    background-color: white;
+    margin-bottom: 100px;
+    
+    /* background-image: url(./img/49a486_6e2c5608d97e4f7ca34f52e89afda937~mv2\ \(3\).png); */
     padding: 10px 0px 70px 0px;
 }
 .contenedor{
@@ -127,9 +128,9 @@ nav a{
 }
 /* EMPIEZA LA CREACION DE LA TARJETA */
 .cuadrado-Padre{ 
-    -webkit-box-shadow: 8px 0px 19px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 8px 0px 19px 0px rgba(0,0,0,0.75);
-    box-shadow: 8px 0px 19px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
+-moz-box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
+box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
     border: 2px solid #404040;
     width: 100vh;
     min-width: 300px;
@@ -141,6 +142,11 @@ nav a{
     border-bottom: 2px solid #404040;
     padding: 5px 10px;
     display: flex;
+    justify-content: space-between;
+}
+.conjun{
+    display: flex;
+    align-items: center;
 }
 .color{
     width: 15px;
@@ -160,14 +166,186 @@ nav a{
 .descripcion{
     padding: 3px 20px;
 }
+
+/* BOTON PARA DESCARGAR EL PDF */
+.boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.bi{
+    font-size: 20px;
+}
+
+.css-button-shadow-border-sliding--grey {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 0px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    background: #495057;
+   z-index: 1;
+   
+}
+.css-button-shadow-border-sliding--grey:hover:after {
+    width: 100%;
+    left: 0;
+}
+.css-button-shadow-border-sliding--grey:after {
+    border-radius: 5px;
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    transition: all 0.3s ease;
+    background-color: #6c757d;
+    right: 0;
+}
+.css-button-shadow-border-sliding--grey:active {
+    top: 2px;
+}
+
+/* EMPIEZO CON LA SEGUNDA TARJETA ESTILO PC */
+
+.compu-Padre{
+    border: 2px solid #E9E9E9;
+    width: 100vh;
+    min-width: 300px;
+    max-width: 600px;
+    border-radius: 10px;
+    background-color: #CACACA;
+    
+}
+.compu-Hijo{
+    width: 100%;
+    height: 35px;
+    background: #404040;
+    border-bottom: 3px solid #E9E9E9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cont{
+    color: #E9E9E9;
+    padding-left: 10px;  
+}
+.compu-Boton{
+    padding: 1px 8px;
+    border: 1px solid #E9E9E9;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.compu-container{
+    -webkit-box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
+    -moz-box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
+    box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
+    width: 70vh;
+    background-color: #CACACA;
+    position: relative;
+    border: 5px solid white;
+}
+
+.compu-Contenido{
+    position: absolute;
+    height: 80%;
+    width: 90%;
+    top: 14%;
+    left: 4.5%;
+    border: 2px solid #404040;
+    background-color: #F7F1F1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.compu-redes img{
+    width: 10vh;
+    cursor: pointer;
+    margin: 0px 30px 0px 30px;
+    
+}
+
 /* TERMINA LA CREACION DE LA TARJETA */
 
 /* EMPIEZO CON LOS PROYECTOS */
 
- .proyects h2{ /* ACOMODAMOS EL H2 */
+ .proyects-titulo{ /* ACOMODAMOS EL H2 */
     font-size: 3rem;
     margin: 70px 0px 60px 0px;
     display: flex;
     justify-content: center;
     align-items: center; 
+}
+.proyects-Img, .proyects-Img2{
+    display: flex;
+    justify-content: space-evenly;
+}
+.bm, .pets, .globe, .presentacion, .norway{
+    width: 50vh;
+    height: 30vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-style: none;
+    border-radius: 10px;
+}
+.letras{
+    background-color: rgba(0, 0, 0, 0.658);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+    border-radius: 10px;
+    
+}
+.letras h2{
+    color: #EFEFFB;
+    font-size: 2.3rem;
+}
+.letras p{
+    color: #EFEFFB;
+    font-size: 1.2rem;
+}
+.bm{
+    background-image: url(./img/BMW.PNG);
+   
+}
+.pets{
+    background-image: url(./img/FunPets.PNG);
+}
+.globe{
+    background-image: url(./img/GlobeTrotter.PNG);
+}
+.presentacion{
+    background-image: url(./img/Hero.PNG);
+}
+.norway{
+    background-image: url(./img/Norway.PNG);
+}
+.presentacion, .norway{
+    margin-top: 100px;
+}
+.letras button{
+    padding: 5px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
