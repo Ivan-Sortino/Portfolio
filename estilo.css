@@ -129,8 +129,8 @@ nav a{
 /* EMPIEZA LA CREACION DE LA TARJETA */
 .cuadrado-Padre{ 
     -webkit-box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
--moz-box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
-box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
+    -moz-box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
+    box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
     border: 2px solid #404040;
     width: 100vh;
     min-width: 300px;
@@ -177,7 +177,6 @@ box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
 .bi{
     font-size: 20px;
 }
-
 .css-button-shadow-border-sliding--grey {
     min-width: 130px;
     height: 40px;
@@ -216,6 +215,7 @@ box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
 .css-button-shadow-border-sliding--grey:active {
     top: 2px;
 }
+/* BOTON PARA DESCARGAR EL PDF */
 
 /* EMPIEZO CON LA SEGUNDA TARJETA ESTILO PC */
 
@@ -341,11 +341,166 @@ box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
 .presentacion, .norway{
     margin-top: 100px;
 }
-.letras button{
-    padding: 5px;
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+/* CREACION DEL BOTON CON PAG */
+.css-button-arrow--grey {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
     cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    overflow: hidden;
+    border-radius: 5px;
+    border: none;
+    background-color: #6c757d;
+    margin-top: 10px;
+  }
+  .css-button-arrow--grey:hover {
+    border-radius: 5px;
+    padding-right: 24px;
+    padding-left:8px;
+  }
+  .css-button-arrow--grey:hover:after {
+    opacity: 1;
+    right: 10px;
+  }
+  .css-button-arrow--grey:after {
+    content: "\00BB";
+    position: absolute;
+    opacity: 0;
+    font-size: 20px;
+    line-height: 40px;
+    top: 0;
+    right: -20px;
+    transition: 0.4s;
+  }
+/* CREACION DEL BOTON CON PAG */
+
+/* COMIENZO CON EL FORMULARIO */
+.formulario, .caja-boton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario h2{
+    font-size: 3rem;
+    margin: 70px 0px 60px 0px;
+}
+.primera-Linea{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+form label{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+form input, .msj textarea{
+    padding: 10px 0px;
+    width: 100%;
+    min-width: 240px;
+    max-width: 588px;
+    outline: none;
+    border: 2px solid #404040;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+.mail input{
+    width: 100%;
+    min-width: 300px;
+    max-width: 600px;
+}
+.name{
+    margin-right: 20px;
+}
+.asunto{
+    margin-bottom: 10px;
+}
+/* CREACION DEL BOTON CON PAG */
+.form-button {
+    margin-top: 20px;
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+    background: #495057;
+  }
+  .form-button:hover {
+    background-color: #6c757d;
+  }
+  .form-button:active {
+    top: 2px;
+  }
+  /* CREACION DEL BOTON CON PAG */
+
+  /* COMIENZO DEL FOOTER */
+.footer-Padre{
+    background-color: #495057;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    padding: 30px ; 
+    backdrop-filter: blur(100%);
+}
+.footer-cont{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.footer-decoration{
+    padding: 20px 10px;
+    background-color: #6c757d;
+    margin-right: 15px;
+    border-style: none;
+    border-radius: 5px;
+    color: #EFEFFB;
+}
+.footer-num{
+    padding: 20px 10px;
+    background-color: #6c757d;
+    margin-right: 15px;
+    border-style: none;
+    border-radius: 5px;
+    color: #EFEFFB;
+}
+.footer-zona{
+    padding: 20px 10px;
+    background-color: #6c757d;
+    margin-right: 15px;
+    border-style: none;
+    border-radius: 5px;
+    color: #EFEFFB;
+    margin-top: 10px;
+}
+.lineas{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.linea, .linea2, .linea3, .linea4{
+    padding: 2px;
+    width: 70vh;
+    background-color: #404040;
+}
+.lineas2{
+    display: flex;
+    justify-content: space-between;
 }
