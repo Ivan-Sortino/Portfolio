@@ -456,8 +456,8 @@ form input, .msj textarea{
     flex-direction: column;
     justify-content: center;
     align-items: center;   
-    padding: 30px ; 
-    backdrop-filter: blur(100%);
+    padding: 30px ;
+     
 }
 .footer-cont{
     display: flex;
@@ -481,6 +481,7 @@ form input, .msj textarea{
     border-radius: 5px;
     color: #EFEFFB;
 }
+
 .footer-zona{
     padding: 20px 10px;
     background-color: #6c757d;
