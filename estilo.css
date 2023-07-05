@@ -11,6 +11,10 @@ a{
 :root{
     background-color: #EFEFFB;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+section[id]{
+    scroll-margin-top: 70px;
 }
 /* CUSTOMIZAMOS EL NAV */
 nav{
@@ -237,9 +241,17 @@ nav a{
     justify-content: space-between;
     align-items: center;
 }
+.compu-imgp{
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+.compu-imgp img{
+    width: 30px;
+}
 .cont{
     color: #E9E9E9;
-    padding-left: 10px;  
+    padding-left: 5px;  
 }
 .compu-Boton{
     padding: 1px 8px;
@@ -504,4 +516,29 @@ form input, .msj textarea{
 .lineas2{
     display: flex;
     justify-content: space-between;
+}
+.bm-no{
+    display: none;
+    
+}
+.pets-no{
+    display: none;
+}
+.globre-no{
+    display: none;
+}
+.pres-no{
+    display: none;
+}
+.norway-no{
+    display: none;
+}
+
+.oscuro{
+    transition: 0.8s;
+    background-color: rgba(0, 0, 0, 0.8);
+    
+}
+.bi{
+    margin-right: 5px;
 }
