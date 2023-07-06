@@ -11,11 +11,15 @@ a{
 :root{
     background-color: #EFEFFB;
     font-family: 'Poppins', sans-serif;
+    
+}
+html{
     scroll-behavior: smooth;
 }
 section[id]{
     scroll-margin-top: 70px;
 }
+
 /* CUSTOMIZAMOS EL NAV */
 nav{
     width: 100%;
@@ -49,9 +53,31 @@ nav a{
 .nombre h1{
    font-size: 4.3rem; 
 }
-.nombre h2{
-    font-size: 2rem;
-    font-weight: 400;
+.puntitos{
+    font-size: 1.7rem;
+    
+}
+.puntitos::after{
+    content: '...';
+    animation: point 3s infinite;
+}
+
+@keyframes point{
+    0%{
+        content: ' ';
+    }
+    33%{
+        content: '.';
+        
+    }
+    66%{
+        content: '..';
+        
+    }
+    100%{
+        content: '...';
+        
+    }
 }
 .avatar img{ /*MODIFICAMOS LA IMG*/
     width: 500px;
@@ -226,6 +252,7 @@ nav a{
 .compu-Padre{
     border: 2px solid #E9E9E9;
     width: 100vh;
+    height: 50%;
     min-width: 300px;
     max-width: 600px;
     border-radius: 10px;
@@ -265,7 +292,10 @@ nav a{
     -webkit-box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
     -moz-box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
     box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
-    width: 70vh;
+    height: 50%;
+    min-width: 550px;
+    max-width: 600px;
+    min-height: 350px;
     background-color: #CACACA;
     position: relative;
     border: 5px solid white;
@@ -294,7 +324,7 @@ nav a{
 
 /* EMPIEZO CON LOS PROYECTOS */
 
- .proyects-titulo{ /* ACOMODAMOS EL H2 */
+.proyects-titulo{ /* ACOMODAMOS EL H2 */
     font-size: 3rem;
     margin: 70px 0px 60px 0px;
     display: flex;
@@ -328,11 +358,11 @@ nav a{
 }
 .letras h2{
     color: #EFEFFB;
-    font-size: 2.3rem;
+    font-size: 2rem;
 }
 .letras p{
     color: #EFEFFB;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 .bm{
     background-image: url(./img/BMW.PNG);
@@ -519,7 +549,7 @@ form input, .msj textarea{
 }
 .bm-no{
     display: none;
-    
+    transition: 1s;
 }
 .pets-no{
     display: none;
@@ -542,3 +572,104 @@ form input, .msj textarea{
 .bi{
     margin-right: 5px;
 }
+
+
+/* COMENZAMOS EL RESPONSIVE */
+
+@media (width <= 1024px){
+   .contenedor{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+   .cuadrado-Padre{
+    margin-bottom: 50px;
+   }
+   
+   .bm, .pets, .globe, .presentacion, .norway{
+    margin-bottom: 20px;
+   }
+   .presentacion, .norway{
+    margin-top: 0px;
+   }
+}
+
+@media (width <= 480px){
+    
+    .avatar{
+        display: none;
+    }
+    .content{
+        justify-content: center;
+        text-align: center; 
+        
+    }
+    .nombre{
+        margin: 0px 30px;
+    }
+    .nombre h1{
+        font-size: 3rem;
+    }
+    .tech{
+        position: relative;
+    }
+    .stack{
+        flex-direction: column;
+    }
+    .stack p{
+        font-size: 1.3rem;
+        text-align: center;
+        padding-bottom: 10px;
+        border-right: 0px;
+        border-bottom: 3px solid #6d6d6e;
+        width: 40%;
+    }
+    .stack-img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 20px;
+    }
+    .stack img{
+        margin-left: 0px;
+    }
+
+    .cuadrado-Padre{
+        width: 90%;
+    }
+    .descripcion h3{
+        font-size: 1.2rem;
+    }
+    .compu-container{
+        min-width: 400px;
+    }
+
+    .bm, .pets, .globe, .presentacion, .norway{
+        width: 90%;
+    }
+
+    .proyects-Img, .proyects-Img2{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .primera-Linea, .mail, .asunto, .msj{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .footer-cont{
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-decoration{
+        margin-bottom: 10px;
+    }
+
+}
+
+
+
+
+

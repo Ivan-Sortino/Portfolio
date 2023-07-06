@@ -13,14 +13,17 @@ class xTarjet extends HTMLElement{
         return`
         .cuadrado-padre{
             position: absolute;
-            left:32.5%;
+            left: 0;
+            right: 0;
+            margin: auto;
             z-index:1;
             border: 2px solid white;
             border-radius: 10px;
             color: #EFEFFB;
             background-color: #6c757d;
             animation: entrada 0.7s;
-            width: 100vh;
+            width: auto;
+            padding: 25px 30px;
             max-width: 600px;
             margin-top: 100px;
         }
@@ -49,8 +52,9 @@ class xTarjet extends HTMLElement{
             margin-bottom: 20px; 
         
         }
-        .boton-Iz{
-            margin-right: 20px;
+        .links{
+            display: flex;
+            gap: 1rem;
         }
         .boton-Iz:hover{
             transition: 0.5s;
@@ -79,7 +83,7 @@ class xTarjet extends HTMLElement{
             cursor: pointer;
             padding: 13px 14px;
             margin-top: 10px;
-            margin-bottom:10px;
+            
             border-radius: 5px;
         }
         .cerrar:hover{
@@ -94,13 +98,17 @@ class xTarjet extends HTMLElement{
        
         this.innerHTML = ` 
         <style>${this.style()}</style>
-        <div class='cuadrado-padre ' >
+        <div class='cuadrado-padre' >
             <div class='cuadrado-hijo'>
                 <h2>${this.Titulo}</h2>
 			    <p>${this.parrafo}</p>
-                <div>
-                    <a href="${this.repo}" target="_blank"><button class="boton-Iz">Link del Repositorio</button></a>
-                    <a href="${this.pag}" target="_blank"><button class="boton-Dr">Link de la Pagina </button></a>
+                <div class='links'>
+                    <div>
+                        <a href="${this.repo}" target="_blank"><button class="boton-Iz">Link del Repositorio</button></a>
+                    </div>
+                    <div>
+                        <a href="${this.pag}" target="_blank"><button class="boton-Dr">Link de la Pagina </button></a>
+                    </div>
                 </div>
 			    <button onclick="${this.boton}" class='cerrar' >Cerrar</button>
 		    </div>
@@ -114,61 +122,69 @@ class xTarjet extends HTMLElement{
 
 customElements.define("tarjeta-proy", xTarjet);
 
+const bm = document.querySelector('.bm-no');
+const pets = document.querySelector('.pets-no');
+const globe = document.querySelector('.globre-no');
+const pres = document.querySelector('.pres-no');
+const norway = document.querySelector('.norway-no');
+const body = document.querySelector('.Body');
+const cerrar = document.querySelector('.cerrar')
+const padre = document.querySelector('.cuadrado-padre');
 
 
 // ABRIR CERRAR BMW
 function mostrarBm(){
-    document.querySelector('.bm-no').style.display = 'block';   
-    document.querySelector('.abc').classList.add('oscuro');
+    bm.style.display = 'block';   
+    body.classList.add('oscuro');
 }
 function ocultarBm(){
-    document.querySelector('.bm-no').style.display = 'none';
-    document.querySelector('.abc').classList.remove('oscuro');
+    bm.style.display = 'none';
+    body.classList.remove('oscuro');
     
 }
 // ABRIR CERRAR BMW
 
 // ABRIR CERRAR FUNTPETS
 function mostrarPets(){
-    document.querySelector('.pets-no').style.display = 'block';
-    document.querySelector('.abc').classList.add('oscuro');
+    pets.style.display = 'block';
+    body.classList.add('oscuro');
 }
 function ocultarPets(){
-    document.querySelector('.pets-no').style.display = 'none';
-    document.querySelector('.abc').classList.remove('oscuro');
+    pets.style.display = 'none';
+    body.classList.remove('oscuro');
 }
 // ABRIR CERRAR FUNTPETS
 
 // ABRIR CERRAR GLOBETROTTER
 function mostrarGlobre(){
-    document.querySelector('.globre-no').style.display = 'block';
-    document.querySelector('.abc').classList.add('oscuro');
+    globe.style.display = 'block';
+    body.classList.add('oscuro');
 }
 function ocultarGlobre(){
-    document.querySelector('.globre-no').style.display = 'none';
-    document.querySelector('.abc').classList.remove('oscuro');
+    globe.style.display = 'none';
+    body.classList.remove('oscuro');
 }
 // ABRIR CERRAR GLOBETROTTER
 
 // ABRIR CERRAR PRESENTACION
 function mostrarPres(){
-    document.querySelector('.pres-no').style.display = 'block';
-    document.querySelector('.abc').classList.add('oscuro');
+    pres.style.display = 'block';
+    body.classList.add('oscuro');
 }
 function ocultarPres(){
-    document.querySelector('.pres-no').style.display = 'none';
-    document.querySelector('.abc').classList.remove('oscuro');
+    pres.style.display = 'none';
+    body.classList.remove('oscuro');
 }
 // ABRIR CERRAR PRESENTACION
 
 // ABRIR CERRAR NORWAY
 function mostrarNorway(){
-    document.querySelector('.norway-no').style.display = 'block';
-    document.querySelector('.abc').classList.add('oscuro');
+    norway.style.display = 'block';
+    body.classList.add('oscuro');
 }
 function ocultarNorway(){
-    document.querySelector('.norway-no').style.display = 'none';
-    document.querySelector('.abc').classList.remove('oscuro');
+    norway.style.display = 'none';
+    body.classList.remove('oscuro');
 }
 // ABRIR CERRAR NORWAY
 
