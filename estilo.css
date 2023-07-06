@@ -37,7 +37,9 @@ nav a{
     margin: 0px 5px;
     padding: 5px 20px;
 }
-
+.bi{
+    display: none;
+}
 
 /* EMPIEZO CON EL HERO */
 .content{ /*ACOMODAMOS EL TEXTO Y LA IMAGEN */
@@ -55,7 +57,6 @@ nav a{
 }
 .puntitos{
     font-size: 1.7rem;
-    
 }
 .puntitos::after{
     content: '...';
@@ -118,6 +119,7 @@ nav a{
 }
 .tech{ 
     position:absolute;
+    z-index: -1;
     margin-top: 80px;
 }
 .stack p{
@@ -595,7 +597,9 @@ form input, .msj textarea{
 }
 
 @media (width <= 480px){
-    
+    nav a{
+        padding: 0px 8px;
+    }
     .avatar{
         display: none;
     }
@@ -634,7 +638,11 @@ form input, .msj textarea{
     .stack img{
         margin-left: 0px;
     }
+    .flech{
+        width: 4rem;
+    }
 
+    
     .cuadrado-Padre{
         width: 90%;
     }
@@ -642,9 +650,12 @@ form input, .msj textarea{
         font-size: 1.2rem;
     }
     .compu-container{
-        min-width: 400px;
+        min-width: 80%;
+        max-width: 100%;
     }
-
+    .compu-redes img{
+        margin: 0px  10px;
+    }
     .bm, .pets, .globe, .presentacion, .norway{
         width: 90%;
     }
@@ -667,6 +678,11 @@ form input, .msj textarea{
         margin-bottom: 10px;
     }
 
+}
+@media (width <= 353px){
+    nav{
+        display: none;
+    }
 }
 
 

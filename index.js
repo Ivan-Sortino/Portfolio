@@ -1,3 +1,34 @@
+// MENU HAMBURGUESA INICIO
+const hamburguesa = document.querySelector('.bi');
+const nav = document.querySelector('.nav-bar');
+
+hamburguesa.addEventListener('click', () =>{
+    nav.classList.add('mobile')
+})
+// MENU HAMBURGUESA FINAL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TARJETA
 class xTarjet extends HTMLElement{
     constructor(){
         super();
@@ -187,4 +218,4 @@ function ocultarNorway(){
     body.classList.remove('oscuro');
 }
 // ABRIR CERRAR NORWAY
-
+// TARJETA
