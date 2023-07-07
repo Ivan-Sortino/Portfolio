@@ -1,22 +1,22 @@
-// MENU HAMBURGUESA INICIO
-const hamburguesa = document.querySelector('.bi');
+const hamburguesa = document.querySelector('.hamburguesa');
 const nav = document.querySelector('.nav-bar');
+const navbar  = document.getElementById('navbar');
+const exis = document.querySelector('.exis');
 
-hamburguesa.addEventListener('click', () =>{
-    nav.classList.add('mobile')
+hamburguesa.addEventListener('click', ()=>{
+    nav.classList.toggle('mostrarLista');
+    navbar.style.display = 'block';
+    hamburguesa.style.display = 'none';
+    exis.style.display = 'block';
+    exis.style.color = 'white'
 })
-// MENU HAMBURGUESA FINAL
 
-
-
-
-
-
-
-
-
-
-
+exis.addEventListener('click', ()=>{
+    nav.classList.remove('mostrarLista');
+    navbar.style.display = 'none';
+    hamburguesa.style.display = 'block';
+    exis.style.display = 'none';
+})
 
 
 
@@ -42,50 +42,54 @@ class xTarjet extends HTMLElement{
     
 	style (){
         return`
-        .cuadrado-padre{
-            position: absolute;
-            left: 0;
-            right: 0;
-            margin: auto;
-            z-index:1;
+        .tarjeta {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #6c757d;
+            color: #EFEFFB;
+            padding: 20px;
             border: 2px solid white;
             border-radius: 10px;
-            color: #EFEFFB;
-            background-color: #6c757d;
-            animation: entrada 0.7s;
-            width: auto;
-            padding: 25px 30px;
+            z-index: 9999;
+            width: 80%;
+            min-width: 100px;
             max-width: 600px;
-            margin-top: 100px;
+            animation: entrada .3s;
         }
+
         @keyframes entrada{
             from{
-                transform: translateY(-1000px);
-                
+                opacity: 0;
             }
             to{
-                transform: translateY(0px);
+                opacity: 1;
             }
         }
-        .cuadrado-hijo{
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center; 
-            align-items: center;
+        .tarjeta .contenido {
+            text-align: center;
         }
-        .cuadrado-hijo h2{
-            
+        .contenido h2{
             font-size: 3.2rem; 
         }
-        .cuadrado-hijo p{
+        .contenido p{
             font-size: 1.2rem;
             margin-bottom: 20px; 
-        
         }
         .links{
             display: flex;
-            gap: 1rem;
+            justify-content: center;
+             gap: 1rem;   
+        }
+        .boton-Dr, .boton-Iz{
+            background-color: #495057;
+            font-weight: 800;
+            color: white;
+            border-style: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 13px 14px 
         }
         .boton-Iz:hover{
             transition: 0.5s;
@@ -97,15 +101,6 @@ class xTarjet extends HTMLElement{
             background-color: white;
             color: #495057;
         }
-        .boton-Dr,.boton-Iz{
-            background-color: #495057;
-            font-weight: 800;
-            color: white;
-            border-style: none;
-            border-radius: 5px;
-            cursor: pointer;
-            padding: 13px 14px 
-        }
         .cerrar{
             background-color: #495057;
             font-weight: 800;
@@ -114,7 +109,6 @@ class xTarjet extends HTMLElement{
             cursor: pointer;
             padding: 13px 14px;
             margin-top: 10px;
-            
             border-radius: 5px;
         }
         .cerrar:hover{
@@ -122,15 +116,14 @@ class xTarjet extends HTMLElement{
             background-color: white;
             color: #495057;
         }
-        
         `
     }
     render() {
        
         this.innerHTML = ` 
         <style>${this.style()}</style>
-        <div class='cuadrado-padre' >
-            <div class='cuadrado-hijo'>
+        <div class='tarjeta' >
+            <div class='contenido'>
                 <h2>${this.Titulo}</h2>
 			    <p>${this.parrafo}</p>
                 <div class='links'>
@@ -166,56 +159,45 @@ const padre = document.querySelector('.cuadrado-padre');
 // ABRIR CERRAR BMW
 function mostrarBm(){
     bm.style.display = 'block';   
-    body.classList.add('oscuro');
 }
 function ocultarBm(){
     bm.style.display = 'none';
-    body.classList.remove('oscuro');
-    
 }
 // ABRIR CERRAR BMW
 
 // ABRIR CERRAR FUNTPETS
 function mostrarPets(){
     pets.style.display = 'block';
-    body.classList.add('oscuro');
 }
 function ocultarPets(){
     pets.style.display = 'none';
-    body.classList.remove('oscuro');
 }
 // ABRIR CERRAR FUNTPETS
 
 // ABRIR CERRAR GLOBETROTTER
 function mostrarGlobre(){
     globe.style.display = 'block';
-    body.classList.add('oscuro');
 }
 function ocultarGlobre(){
     globe.style.display = 'none';
-    body.classList.remove('oscuro');
 }
 // ABRIR CERRAR GLOBETROTTER
 
 // ABRIR CERRAR PRESENTACION
 function mostrarPres(){
     pres.style.display = 'block';
-    body.classList.add('oscuro');
 }
 function ocultarPres(){
     pres.style.display = 'none';
-    body.classList.remove('oscuro');
 }
 // ABRIR CERRAR PRESENTACION
 
 // ABRIR CERRAR NORWAY
 function mostrarNorway(){
     norway.style.display = 'block';
-    body.classList.add('oscuro');
 }
 function ocultarNorway(){
     norway.style.display = 'none';
-    body.classList.remove('oscuro');
 }
 // ABRIR CERRAR NORWAY
 // TARJETA

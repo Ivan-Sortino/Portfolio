@@ -31,13 +31,17 @@ nav{
     justify-content: center;
     align-items: center;
     text-align: center;
+
 }
 nav a{
     font-size: 18px;
     margin: 0px 5px;
     padding: 5px 20px;
 }
-.bi{
+.hamburguesa{
+    display: none;
+}
+.exis{
     display: none;
 }
 
@@ -549,9 +553,28 @@ form input, .msj textarea{
     display: flex;
     justify-content: space-between;
 }
+
+.bm-no, .pets-no, .globre-no, .pres-no, .norway-no{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo semi-transparente */
+    z-index: 9998; /* Por debajo de la tarjeta */
+    animation: entrada .3s; 
+}
+@keyframes entrada{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
 .bm-no{
-    display: none;
-    transition: 1s;
+    display: none;    
 }
 .pets-no{
     display: none;
@@ -564,12 +587,6 @@ form input, .msj textarea{
 }
 .norway-no{
     display: none;
-}
-
-.oscuro{
-    transition: 0.8s;
-    background-color: rgba(0, 0, 0, 0.8);
-    
 }
 .bi{
     margin-right: 5px;
@@ -597,16 +614,67 @@ form input, .msj textarea{
 }
 
 @media (width <= 480px){
-    nav a{
-        padding: 0px 8px;
+    nav{
+       backdrop-filter: blur(0px);
+       display: none;
     }
+    
+    nav a{
+        display: flex;
+        flex-direction: column;
+        font-size: 2.5rem;
+        font-weight: 100;
+        color: #EFEFFB;
+        margin: 30px 0px;
+        gap: 2.8rem;
+    }
+    .navA{
+        margin-top: 30%;
+    }
+    .mostrarLista{
+        position: fixed;
+        z-index: 2;
+        display: block;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        transition: .5s ;
+        
+    }
+    .mobile{
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        position: fixed;
+        width: 100%;
+        backdrop-filter: blur(10px);
+    }
+    .hamburguesa{
+        color: black;
+        display: block;  
+        font-size: 3rem;    
+        margin: 30px 50px 0px 0px; 
+        cursor: pointer; 
+
+           
+    }
+    .exis{
+        color: black;
+        display: none;
+        font-size: 3rem;
+        margin: 40px 50px 0px 0px;
+        cursor: pointer;
+    }
+    
+    
+
     .avatar{
         display: none;
     }
     .content{
         justify-content: center;
         text-align: center; 
-        
+        height: 90vh;
     }
     .nombre{
         margin: 0px 30px;
@@ -670,6 +738,13 @@ form input, .msj textarea{
         flex-direction: column;
     }
     
+
+    .name{
+        margin: 0px;
+    }
+    .mail input{
+        min-width: none;
+    }
     .footer-cont{
         display: flex;
         flex-direction: column;
@@ -679,11 +754,7 @@ form input, .msj textarea{
     }
 
 }
-@media (width <= 353px){
-    nav{
-        display: none;
-    }
-}
+
 
 
 
