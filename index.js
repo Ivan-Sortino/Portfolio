@@ -2,13 +2,15 @@ const hamburguesa = document.querySelector('.hamburguesa');
 const nav = document.querySelector('.nav-bar');
 const navbar  = document.getElementById('navbar');
 const exis = document.querySelector('.exis');
+const mobile = document.querySelector('.mobile');
 
 hamburguesa.addEventListener('click', ()=>{
-    nav.classList.toggle('mostrarLista');
+    nav.classList.add('mostrarLista');
     navbar.style.display = 'block';
     hamburguesa.style.display = 'none';
     exis.style.display = 'block';
     exis.style.color = 'white'
+    mobile.style.backdropFilter = 'blur(0px)';
 })
 
 exis.addEventListener('click', ()=>{
@@ -16,6 +18,15 @@ exis.addEventListener('click', ()=>{
     navbar.style.display = 'none';
     hamburguesa.style.display = 'block';
     exis.style.display = 'none';
+    mobile.style.backdropFilter = 'blur(10px)';
+})
+
+
+const botonDark = document.querySelector('.darkMode');
+
+botonDark.addEventListener('click', ()=>{
+    botonDark.classList.toggle('active');
+    document.body.classList.toggle('dark');
 })
 
 
@@ -27,8 +38,7 @@ exis.addEventListener('click', ()=>{
 
 
 
-
-// TARJETA
+// TARJETA COMPONENTE
 class xTarjet extends HTMLElement{
     constructor(){
         super();
@@ -42,7 +52,7 @@ class xTarjet extends HTMLElement{
     
 	style (){
         return`
-        .tarjeta {
+        .tarjeta { 
             position: fixed;
             top: 50%;
             left: 50%;
@@ -116,6 +126,9 @@ class xTarjet extends HTMLElement{
             background-color: white;
             color: #495057;
         }
+        .textoTarjet{
+            max-width: 75ch;
+        }
         `
     }
     render() {
@@ -125,7 +138,7 @@ class xTarjet extends HTMLElement{
         <div class='tarjeta' >
             <div class='contenido'>
                 <h2>${this.Titulo}</h2>
-			    <p>${this.parrafo}</p>
+			    <p class='textoTarjet'>${this.parrafo}</p>
                 <div class='links'>
                     <div>
                         <a href="${this.repo}" target="_blank"><button class="boton-Iz">Link del Repositorio</button></a>
@@ -200,4 +213,5 @@ function ocultarNorway(){
     norway.style.display = 'none';
 }
 // ABRIR CERRAR NORWAY
-// TARJETA
+
+// TARJETA COMPONENTET

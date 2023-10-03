@@ -9,7 +9,7 @@ a{
     color: black;
 }
 :root{
-    background-color: #EFEFFB;
+    background-color: #e8e8f8;
     font-family: 'Poppins', sans-serif;
     
 }
@@ -21,6 +21,8 @@ section[id]{
 }
 
 /* CUSTOMIZAMOS EL NAV */
+
+
 nav{
     width: 100%;
     height: 70px;
@@ -31,12 +33,25 @@ nav{
     justify-content: center;
     align-items: center;
     text-align: center;
-
+    box-shadow: 0 0 10px rgba(0,0,0,.09);
 }
 nav a{
     font-size: 18px;
     margin: 0px 5px;
     padding: 5px 20px;
+}
+nav a:hover{
+    color: rgb(70, 68, 68);
+    transition: .5s;
+}
+
+
+body.dark nav a{  /* COLOR EN MODO OSCURO*/
+    color: #fff;
+}
+
+.iconoA{
+    display: none;
 }
 .hamburguesa{
     display: none;
@@ -44,6 +59,62 @@ nav a{
 .exis{
     display: none;
 }
+
+
+
+/*BOTON MODO OSCURO CLARO*/
+.navConjunto{ 
+    position: absolute;
+    top: 22px;
+    right: 100px;
+    z-index: 1000;
+}
+.darkMode{
+    display: flex;
+    background: #343d5b;
+    border-radius: 1000px;
+    border: none;
+    position: fixed;
+    cursor: pointer;
+    outline: none;
+}
+.darkMode::after{
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #f1f1f1;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: .3s;
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,.2);
+}
+.darkMode.active{
+    background-color: orange;
+    color: rgb(31, 30, 30);
+}
+.darkMode.active::after{
+    right: 0;
+    left: unset;
+}
+.darkMode span{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+.dark{
+    background: #34353a;
+    transition: .3s ease all;
+}
+/*BOTON MODO OSCURO */
+
 
 /* EMPIEZO CON EL HERO */
 .content{ /*ACOMODAMOS EL TEXTO Y LA IMAGEN */
@@ -55,19 +126,49 @@ nav a{
 }
 .nombre{
     margin: 0px 40px;
+    text-shadow: 0 0 3px black;
 }
+body.dark .nombre{
+    text-shadow: 0 0 1px white;
+}
+span{
+    color: #ff6f00;
+}
+
 .nombre h1{
    font-size: 4.3rem; 
+   animation: inicioLetras 1.5s;
 }
-.puntitos{
+@keyframes inicioLetras{
+    from{
+        transform: translateY(-1000px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+}
+body.dark h1{
+    color: #fff;
+}
+
+.puntitos{ 
     font-size: 1.7rem;
+    animation: inicioP 1.5s;
 }
-.puntitos::after{
+@keyframes inicioP{
+    from{
+        transform: translateX(-1000px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
+.puntitos::after{ 
     content: '...';
     animation: point 3s infinite;
 }
 
-@keyframes point{
+@keyframes point{ 
     0%{
         content: ' ';
     }
@@ -84,10 +185,46 @@ nav a{
         
     }
 }
-.avatar img{ /*MODIFICAMOS LA IMG*/
-    width: 500px;
-    display: block;
+body.dark  .nombre p{
+    color: white;
 }
+
+/*ESTILO DE LA IMAGEN DEL HERO*/
+.heroImg{
+    background-image: url(./img/yo.jpg);
+    width: 25rem;
+    height: 25rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px solid #2d2e32;
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    position: relative;
+    animation: movimientoConst 8s ease-in-out infinite;
+    -webkit-box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
+    -moz-box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
+    box-shadow: 15px 21px 15px 5px rgba(0,0,0,0.64);
+    
+}
+@keyframes movimientoConst {
+    0%{
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50%{
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    100%{
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+body.dark .heroImg{
+    border: 3px solid #CACACA;
+    -webkit-box-shadow: 15px 21px 15px 5px rgba(189, 189, 189, 0.64);
+    -moz-box-shadow: 15px 21px 15px 5px rgba(189, 189, 189, 0.64);
+    box-shadow: 15px 21px 15px 5px rgba(189, 189, 189, 0.64);
+}
+/*ESTILO DE LA IMAGEN HERO FIN*/
+
 .flech{ /*IMG DE LA FLECHA*/
     position: absolute;
     top: 88%;
@@ -120,10 +257,19 @@ nav a{
 .stack{
     display: flex;
     align-items: center;   
+    animation: inicioImg 1.5s;
+}
+@keyframes inicioImg{
+    from{
+        transform: translateY(1000px);
+    }
+    to{
+        transform: translateY(0px);
+    }
 }
 .tech{ 
     position:absolute;
-    z-index: -1;
+    z-index: 1;
     margin-top: 80px;
 }
 .stack p{
@@ -131,6 +277,11 @@ nav a{
     padding-right: 10px;
     font-size: 1.1rem; 
 }
+
+body.dark .stack p{
+    color: white;
+}
+
 .stack img{
     height: 50px;
     margin-left: 2rem;
@@ -141,20 +292,24 @@ nav a{
     padding: 10px;
     
 }
+/*STACK DE HABILIDADES FIN*/
 
 /* EMPIZO CON EL ABOUT ME */
 
+body.dark .about h2{
+    color: #fff;
+    text-shadow: 0 0 1px white;
+}
 .about h2{  /* ACOMODAMOS EL TITULO */
     font-size: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px 0px 100px 0px; 
+    text-shadow: 0 0 3px black;
 }
 .about{
     margin-bottom: 100px;
-    
-    /* background-image: url(./img/49a486_6e2c5608d97e4f7ca34f52e89afda937~mv2\ \(3\).png); */
     padding: 10px 0px 70px 0px;
 }
 .contenedor{
@@ -174,6 +329,13 @@ nav a{
     border-radius: 10px;
     background-color: #F7F1F1;
 }
+
+body.dark .cuadrado-Padre{
+    -webkit-box-shadow: 15px 21px 15px 5px rgba(189, 189, 189, 0.64);
+    -moz-box-shadow: 15px 21px 15px 5px rgba(189, 189, 189, 0.64);
+    box-shadow: 15px 21px 15px 5px rgba(189, 189, 189, 0.64);
+}
+
 .cuadrado-Hijo{
     border-bottom: 2px solid #404040;
     padding: 5px 10px;
@@ -200,7 +362,11 @@ nav a{
     background-color: #60e10e;
 }
 .descripcion{
-    padding: 3px 20px;
+    padding: 33px 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 /* BOTON PARA DESCARGAR EL PDF */
@@ -263,7 +429,6 @@ nav a{
     max-width: 600px;
     border-radius: 10px;
     background-color: #CACACA;
-    
 }
 .compu-Hijo{
     width: 100%;
@@ -306,6 +471,11 @@ nav a{
     position: relative;
     border: 5px solid white;
 }
+body.dark .compu-container{
+    -webkit-box-shadow: 15px 21px 15px 5px rgba(189, 189, 189, 0.64);
+    -moz-box-shadow: 15px 21px 15px 5px rgba(189, 189, 189, 0.64);
+    box-shadow: 15px 21px 15px 5px rgba(189, 189, 189, 0.64);
+}
 
 .compu-Contenido{
     position: absolute;
@@ -329,19 +499,23 @@ nav a{
 /* TERMINA LA CREACION DE LA TARJETA */
 
 /* EMPIEZO CON LOS PROYECTOS */
-
+body.dark .proyects-titulo{
+    color: #fff;
+    text-shadow: 0 0 1px white;
+}
 .proyects-titulo{ /* ACOMODAMOS EL H2 */
     font-size: 3rem;
     margin: 70px 0px 60px 0px;
     display: flex;
     justify-content: center;
     align-items: center; 
+    text-shadow: 0 0 3px black;
 }
 .proyects-Img, .proyects-Img2{
     display: flex;
     justify-content: space-evenly;
 }
-.bm, .pets, .globe, .presentacion, .norway{
+.bm, .pets, .globe, .presentacion, .norway{ /*MODIFICAMOS LAS TARJETAS*/
     width: 50vh;
     height: 30vh;
     background-repeat: no-repeat;
@@ -350,7 +524,7 @@ nav a{
     border-style: none;
     border-radius: 10px;
 }
-.letras{
+.letras{ /*TEXTO DENTRO DE LAS TARJETAS*/
     background-color: rgba(0, 0, 0, 0.658);
     width: 100%;
     height: 100%;
@@ -370,9 +544,12 @@ nav a{
     color: #EFEFFB;
     font-size: 1.1rem;
 }
+/*IMAGEN DE FONDO DE LAS TARJETAS*/
 .bm{
     background-image: url(./img/BMW.PNG);
-   
+}
+.bm:hover{
+    transform: scale(1);
 }
 .pets{
     background-image: url(./img/FunPets.PNG);
@@ -390,7 +567,46 @@ nav a{
     margin-top: 100px;
 }
 
-/* CREACION DEL BOTON CON PAG */
+
+.bm-no, .pets-no, .globre-no, .pres-no, .norway-no{  /*PONE UN FONDO OSCURO PARA CUANDO SE HABRA LAS TARJETAS*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo semi-transparente */
+    z-index: 9998; /* Por debajo de la tarjeta */
+    animation: entrada .3s; 
+}
+@keyframes entrada{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+/* HAGO Q LAS TARJETAS NO SE VEAN Y LO MODIFICO LUEGO EN JS */
+.bm-no{
+    display: none;    
+}
+.pets-no{
+    display: none;
+}
+.globre-no{
+    display: none;
+}
+.pres-no{
+    display: none;
+}
+.norway-no{
+    display: none;
+}
+.bi{
+    margin-right: 5px;
+}
+
+/* CREACION DEL BOTON PARA SABER MAS INFO*/
 .css-button-arrow--grey {
     min-width: 130px;
     height: 40px;
@@ -436,15 +652,23 @@ nav a{
     align-items: center;
 }
 
+body.dark .formulario h2{
+    color: #fff;
+    text-shadow: 0 0 1px white;
+}
+
 .formulario h2{
     font-size: 3rem;
     margin: 70px 0px 60px 0px;
+    text-shadow: 0 0 3px black;
 }
-.primera-Linea{
+.primera-Linea{ /*LINEA DE NOMBRE Y MAIL*/
     display: flex;
     margin-bottom: 10px;
 }
-
+body.dark label{
+    color: #fff;
+}
 form label{
     display: flex;
     flex-direction: column;
@@ -454,7 +678,7 @@ form input, .msj textarea{
     padding: 10px 0px;
     width: 100%;
     min-width: 240px;
-    max-width: 588px;
+    max-width: 528px;
     outline: none;
     border: 2px solid #404040;
     border-radius: 5px;
@@ -462,7 +686,6 @@ form input, .msj textarea{
 }
 .mail input{
     width: 100%;
-    min-width: 300px;
     max-width: 600px;
 }
 .name{
@@ -497,8 +720,8 @@ form input, .msj textarea{
   }
   /* CREACION DEL BOTON CON PAG */
 
-  /* COMIENZO DEL FOOTER */
-.footer-Padre{
+/* COMIENZO DEL FOOTER */
+.footer-Padre{ 
     background-color: #495057;
     display: flex;
     flex-direction: column;
@@ -553,50 +776,18 @@ form input, .msj textarea{
     display: flex;
     justify-content: space-between;
 }
+/* FIN DEL FOOTER */
 
-.bm-no, .pets-no, .globre-no, .pres-no, .norway-no{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo semi-transparente */
-    z-index: 9998; /* Por debajo de la tarjeta */
-    animation: entrada .3s; 
-}
-@keyframes entrada{
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
-}
 
-.bm-no{
-    display: none;    
-}
-.pets-no{
-    display: none;
-}
-.globre-no{
-    display: none;
-}
-.pres-no{
-    display: none;
-}
-.norway-no{
-    display: none;
-}
-.bi{
-    margin-right: 5px;
-}
+
 
 
 /* COMENZAMOS EL RESPONSIVE */
 
+
+/* RESPONSIVE DE LAPTOPS */
 @media (width <= 1024px){
-   .contenedor{
+   .contenedor{ /* CUSTOMIZO LAS  TARJETAS*/
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -613,33 +804,53 @@ form input, .msj textarea{
    }
 }
 
-@media (width <= 480px){
+
+@media (width <= 767px){
+    
     nav{
        backdrop-filter: blur(0px);
        display: none;
     }
-    
     nav a{
         display: flex;
-        flex-direction: column;
-        font-size: 2.5rem;
-        font-weight: 100;
+        font-size: 1.5rem;
         color: #EFEFFB;
-        margin: 30px 0px;
-        gap: 2.8rem;
-    }
+        margin: 20px 0px;
+        justify-content: center;
+        align-items: center;
+    } 
     .navA{
-        margin-top: 30%;
+        margin-top: 5.5rem;
     }
+    .navConjunto{
+        top: 23px;
+        left: 30px;
+        z-index: 1001;
+    }
+    .iconoA{
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+   
     .mostrarLista{
         position: fixed;
+        right: 0%;
         z-index: 2;
         display: block;
         width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.95);
+        height: 50vh;
+        background-color: rgba(0, 0, 0, 0.842);
         transition: .5s ;
-        
+        backdrop-filter: blur(10px);
+        max-height: 400px;
+        min-height: 350px;
+    }
+    
+    body.dark .mostrarLista{
+        background-color: rgba(255, 255, 255, 0.068);
     }
     .mobile{
         display: flex;
@@ -647,40 +858,66 @@ form input, .msj textarea{
         align-items: end;
         position: fixed;
         width: 100%;
+        height: 70px;
         backdrop-filter: blur(10px);
+        z-index: 1000;
+        box-shadow: 0 0 10px rgba(0,0,0,.09);
     }
     .hamburguesa{
         color: black;
         display: block;  
-        font-size: 3rem;    
-        margin: 30px 50px 0px 0px; 
-        cursor: pointer; 
-
-           
+        font-size: 2.5rem;    
+        margin: 0px 50px 0px 0px; 
+        cursor: pointer;    
+        text-shadow: 0 0 3px black;     
+    }
+    body.dark .hamburguesa{
+        color: #fff;
     }
     .exis{
-        color: black;
+        position:absolute;
+        left: 72%;
+        top: -9px;
         display: none;
-        font-size: 3rem;
-        margin: 40px 50px 0px 0px;
+        font-size: 4rem;
         cursor: pointer;
+        animation: exisA 2s ;
     }
-    
-    
-
-    .avatar{
-        display: none;
+    @keyframes exisA {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
     }
-    .content{
-        justify-content: center;
-        text-align: center; 
-        height: 90vh;
+    .nombre h1{
+        animation: inicioMovil 1.5s;
+    }
+    @keyframes inicioMovil {
+        from{
+            transform: translateX(1000px);
+        }
+        to{
+            transform: translateX(0px);
+        }
+    }
+    .heroImg{  /* IMAGEN DEL HERO */
+        height: 13rem;
+        width: 13rem;
+        margin-bottom: 2rem;
+        margin-top: 20%;
+        max-height: 500px;
+        min-height: 250px;
     }
     .nombre{
         margin: 0px 30px;
     }
     .nombre h1{
-        font-size: 3rem;
+        font-size: 2.5rem;
+    }
+    .nombre p{
+        font-size: 1.5rem;
     }
     .tech{
         position: relative;
@@ -689,7 +926,7 @@ form input, .msj textarea{
         flex-direction: column;
     }
     .stack p{
-        font-size: 1.3rem;
+        font-size: 1rem;
         text-align: center;
         padding-bottom: 10px;
         border-right: 0px;
@@ -705,12 +942,22 @@ form input, .msj textarea{
     }
     .stack img{
         margin-left: 0px;
+        height: 40px;
     }
     .flech{
-        width: 4rem;
+        display: none;
     }
-
     
+    
+    .about h2{
+        margin: 70px 0px 100px 0px;
+    }
+    .content{
+        justify-content: center;
+        text-align: center; 
+        flex-direction: column-reverse ;
+        height: 50rem;
+    }
     .cuadrado-Padre{
         width: 90%;
     }
@@ -753,6 +1000,18 @@ form input, .msj textarea{
         margin-bottom: 10px;
     }
 
+}
+@media (width <= 360px){
+    form input{
+        width: 70%;
+        max-width: 50px;
+    } 
+    .mail input{
+        width: 50%;
+    }
+    .msj textarea{
+        max-width: 50px;
+    }
 }
 
 

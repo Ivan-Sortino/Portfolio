@@ -3,34 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ivan Sortino | Portfolio</title>
+    <link rel="icon" type="image/png" href="./img/favicon.png">
     <link rel="stylesheet" href="estilo.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    
+    <script src="https://kit.fontawesome.com/2f1cb9dd29.js" crossorigin="anonymous"></script>
 </head>
-<body class="Body">
+<body>
     <header class="nav-bar">
-        <div class="mobile">
-            <i  class="bi bi-list hamburguesa"></i>
-            <i class="bi bi-x-lg exis"></i>
-        </div>
-        
         <nav id="navbar" >
-            <a class="navA" href="#">Home</a>
-            <a href="#about">About</a>
-            <a href="#proyects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a class="navA" href="#"><i class="bi bi-house-door iconoA"></i>Home</a>
+            <a href="#about"><i class="bi bi-person iconoA"></i>Sobre Mi</a>
+            <a href="#proyects"><i class="bi bi-code-slash iconoA"></i>Proyectos</a>
+            <a href="#contact"><i class="bi bi-chat-dots iconoA"></i>Contacto</a>
             
         </nav>
-        
-        
+        <div class="navConjunto">
+            <button class="darkMode">
+                <span><i class="fa-solid fa-sun"></i></span>
+                <span><i class="fa-solid fa-moon"></i></span>
+            </button>
+        </div>
+        <!-- ¡Hola! Mi nombre es Iván Sortino, tengo 19 años, soy de Argentina, como desarrollador Front-End poseo conocimiento de HTML, CSS, JavaScript. Me destaco en el diseño y mantenimiento de sitios webs que ofrecen una experiencia de usuario fluida y unica. Mi experiencia radica en crear interfaces dinámicas y atractivas a través de una escritura limpia y código optimizado utilizando buenas practicas. Me encanta trabajar en equipo y colaborar con otros para enfrentar nuevos desafíos y encontrar soluciones creativas y efectivas.  -->
+        <div class="mobile">
+            <i  class="bi bi-list hamburguesa"></i>
+            <i class="bi bi-x exis"></i>
+        </div>
     </header>
     <main>
         <section class="hero section">
             
             <div class="content">
                 <div class="nombre">
-                    <h1>Hi, i'm Ivan</h1>
+                    <h1>Hola, Soy <span>Iván</span> </h1>
                     <p class="puntitos">Frontend Web Developer</p>
                     <div class="tech">
                         <div class="stack">
@@ -47,9 +52,9 @@
                     </div>
                      
                 </div>
-                <div class="avatar">
-                    <img src="./img/avatar.png" alt="">
-                </div>
+        
+                <div class="heroImg"></div>
+
                 <img class="flech" src="./img/Flechas.svg" alt="">
             </div>
 
@@ -57,7 +62,7 @@
 
         <section class="about" id="about">
             
-             <h2>About me</h2>
+             <h2>Sobre Mi</h2>
             
         
             <div class="contenedor">
@@ -68,22 +73,20 @@
                             <div class="color Yellow"></div>
                             <div class="color Green"></div>
                         </div>
-                        <a download="Ivan-Sortino-CV" href="./pdf/CV.pdf"><button class="css-button-shadow-border-sliding--grey boton">Descargar CV<i class="bi bi-filetype-pdf"></i></button></a>
+                        <a download="Ivan-Sortino-CV" href="./pdf/Ivan-Sortino-CV.pdf"><button class="css-button-shadow-border-sliding--grey boton">Descargar CV<i class="bi bi-filetype-pdf"></i></button></a>
                         
-                       
                     </div>
                     <div class="descripcion">
-                        <h3>A dedicated Front-end Developer <br>
-                        based in Argentina, Buenos Aires📍</h3>
-                        <p>As a Junior Front-End Developer, I possess an impressive <br>
-                        arsenal of skills in HTML, CSS, JavaScript. I excel <br>
-                        in designing and maintaining responsive websites that  <br>
-                        offer a smooth user experience. My expertise lies in <br>
-                        crafting dynamic, engaging interfaces through writing clean <br>
-                        and optimized code and utilizing cutting-edge development tools <br>
-                        and techniques. I am also a team player who thrives in <br>
-                        collaborating with cross-functional teams to produce <br>
-                        outstanding web applications.</p>
+                        
+                        <p>¡Hola! Mi nombre es <span>Iván Sortino</span>, tengo 19 años, soy de Argentina, 
+                            como desarrollador Front-End poseo conocimiento de HTML, CSS, JavaScript.
+                            Me destaco en el diseño y mantenimiento de sitios webs que ofrecen
+                            una experiencia de usuario fluida y unica. Mi experiencia radica en crear 
+                            interfaces dinámicas y atractivas a través de una escritura limpia y código
+                            optimizado utilizando buenas practicas. Me encanta trabajar en equipo
+                            y colaborar con otros para enfrentar nuevos desafíos y encontrar
+                            soluciones creativas y efectivas.  
+                            </p>
                         
                     </div> 
                 </div>
@@ -91,7 +94,7 @@
                     <div class="compu-Hijo">
                         <div class="compu-imgp">
                             <img src="./img/Computadora.png" alt="">
-                            <p class="cont">Contact</p>
+                            <p class="cont">Contacto</p>
                         </div>
                         
                         <button class="compu-Boton">x</button>
@@ -109,13 +112,13 @@
         </section>
 
         <section class="proyects" id="proyects">
-            <h2 class="proyects-titulo">Proyects</h2> 
+            <h2 class="proyects-titulo">Proyectos</h2> 
             <!-- COMPONENTES -->
-            <div class="bm-no"><tarjeta-proy titulo="BMW" parrafo="Esta es una landing page basado en la <br> marca de autos Bmw" repo="https://github.com/Ivan-Sortino/BMW" pag="https://ivan-sortino.github.io/BMW/" boton-cerrar="ocultarBm()"></tarjeta-proy></div>
-            <div class="pets-no"><tarjeta-proy titulo="FunPets" parrafo="Esta es una Landing Page acerca de animales, donde tenemos informacion sobre productos y <br>juguetes para cualquier mascota, hecho con unos colores llamativos para que se vea una pagina <br>divertida para el cliente" repo="https://github.com/Ivan-Sortino/veterinaria" pag="https://ivan-sortino.github.io/veterinaria/" boton-cerrar="ocultarPets()"></tarjeta-proy></div>
-            <div class="globre-no"><tarjeta-proy titulo="GlobreTrotter" parrafo="Este proyecto es de una pagina de turismo y vuelos,<br> si estas interesado en viajar en esta pagina  podes comprar paquetes de vuelos hacia distintos al rededor del mundo" repo="https://github.com/Ivan-Sortino/PaginaViajes" pag="https://ivan-sortino.github.io/PaginaViajes/" boton-cerrar="ocultarGlobre()"></tarjeta-proy></div>
-            <div class="pres-no"><tarjeta-proy titulo="Presentacion" parrafo="Esta es una Hero page, donde empece a usar mas herramientas que estuve aprediendo, en esta pagina podemos presentarnos y mostrar nuestros trabajos" repo="https://github.com/Ivan-Sortino/Hero" pag="https://ivan-sortino.github.io/Hero/" boton-cerrar="ocultarPres()"></tarjeta-proy></div>
-            <div class="norway-no"><tarjeta-proy titulo="Norway" parrafo="Esta es una pagina de turismo sobre Noruega, si estas interesado en ir a Noruega y no sabes que lugares podrias visitar, esta es la pagina que tenes que visitar , te mostramos los tres lugares mas lindos y turisticos del pais para que puedas vistitarlos" repo="https://github.com/Ivan-Sortino/PaginaTurismo" pag="https://ivan-sortino.github.io/PaginaTurismo/" boton-cerrar="ocultarNorway()"></tarjeta-proy></div>
+            <div class="bm-no"><tarjeta-proy titulo="BMW" parrafo="Esta es una landing page basado en la <br> marca de autos BMW." repo="https://github.com/Ivan-Sortino/BMW" pag="https://ivan-sortino.github.io/BMW/" boton-cerrar="ocultarBm()"></tarjeta-proy></div>
+            <div class="pets-no"><tarjeta-proy titulo="FunPets" parrafo="Esta es una Landing Page de una veterinaria, donde tenemos informacion sobre productos y juguetes para cualquier mascota, hecho con unos colores llamativos para que se vea una pagina divertida para el cliente." repo="https://github.com/Ivan-Sortino/veterinaria" pag="https://ivan-sortino.github.io/veterinaria/" boton-cerrar="ocultarPets()"></tarjeta-proy></div>
+            <div class="globre-no"><tarjeta-proy titulo="GlobreTrotter" parrafo="Esta es una landing page de turismo y vuelos, si estas interesado en viajar, en esta pagina podes comprar paquetes de vuelos hacia distintos lugares del mundo." repo="https://github.com/Ivan-Sortino/PaginaViajes" pag="https://ivan-sortino.github.io/PaginaViajes/" boton-cerrar="ocultarGlobre()"></tarjeta-proy></div>
+            <div class="pres-no"><tarjeta-proy titulo="Presentacion" parrafo="Esta es una Hero page, con un diseño unico e innovador, en esta pagina podemos presentarnos y mostrar nuestros trabajos." repo="https://github.com/Ivan-Sortino/Hero" pag="https://ivan-sortino.github.io/Hero/" boton-cerrar="ocultarPres()"></tarjeta-proy></div>
+            <div class="norway-no"><tarjeta-proy titulo="Norway" parrafo="Esta es una pagina de turismo sobre Noruega, si estas interesado en ir y no sabes que lugares podrias visitar, esta es la pagina que tenes que visitar, te mostramos los tres lugares mas lindos y turisticos del pais para que puedas visitarlos." repo="https://github.com/Ivan-Sortino/PaginaTurismo" pag="https://ivan-sortino.github.io/PaginaTurismo/" boton-cerrar="ocultarNorway()"></tarjeta-proy></div>
             <!-- COMPONENTES FIN -->
             <div class="proyects-Img">
                 <div class="bm">
@@ -167,37 +170,36 @@
         </section>
         
         <section class="formulario" id="contact">
-            <h2>Contact</h2> <Tarjet-Nose></Tarjet-Nose> 
-            <form action="https://formsubmit.co/51ed0cdd629be6f557b16b53f06ecbf2" method="POST">
+            <h2>Contacto</h2>
+            <form name="formulario-contacto" netlify>
                 
                 <div class="primera-Linea">
                     <div class="name">
-                        <label for="">Name</label>
-                        <input type="text" name="name" required placeholder="Your Name"> 
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" required placeholder="Su nombre"> 
                     </div>
                     <div class="mail">
-                        <label for="">Mail</label>
+                        <label for="email">Mail</label>
                         <input type="email" name="email" required placeholder="e.g example@mail.com">
                     </div>
                     
                 </div>
                 <div class="asunto">
-                    <label for="">Asunto</label>
+                    <label for="subject">Asunto</label>
                     <input type="text" name="subject" required>
                 </div>
 
                 <div class="msj">
-                    <label for="">Message</label>
-                    <textarea name="Message" name="Message" id="" rows="10" cols="30" required placeholder="Enter your menssage here"></textarea>
+                    <label for="Message">Mensaje</label>
+                    <textarea name="Message" name="Message" id="" rows="10" cols="30" required placeholder="Ingrese su mensaje aquí"></textarea>
                 </div>
                 
                 
                 
                 <div class="caja-boton">
-                    <button class="form-button">Enviar</button>
+                    <button class="form-button" type="submit">Enviar</button>
                 </div>
-                <input type="hidden" name="_next" value="http://127.0.0.1:5500/">
-                <input type="hidden" name="_captcha" value="false">
+
             </form>
         </section>
     </main>
